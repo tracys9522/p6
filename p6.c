@@ -71,7 +71,7 @@ int main(){
                 gettimeofday(&cur, NULL);
                 cur_time = (float)(cur.tv_sec - start.tv_sec); //seconds
                 cur_time += (float)(cur.tv_usec - start.tv_usec)/1000000.; //microseconds
-                if (cur_time > 5) timeout = true;
+                if (cur_time > 30) timeout = true;
                 
                 fflush(_fd);
                 fprintf(_fd, "%2.3f Child %d message %d \n", cur_time, i+1, message_num++);
@@ -88,7 +88,7 @@ int main(){
                 gettimeofday(&cur, NULL);
                 cur_time = (float)(cur.tv_sec - start.tv_sec);
                 cur_time += (float)(cur.tv_usec - start.tv_usec)/1000000.;
-                if (cur_time > 5) timeout = true;
+                if (cur_time > 30) timeout = true;
                 
                 fflush(_fd);
                 fprintf(_fd, "%2.3f Child 5 message %s\n", cur_time, message_in);
